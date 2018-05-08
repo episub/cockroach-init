@@ -13,3 +13,9 @@ ENV SCRIPTS_FOLDER /importer/Scripts
 ADD Scripts /importer/Scripts
 ENTRYPOINT ["/importer/init.sh"]
 ```
+
+# Notes:
+
+* Files are imported in an order sorted by filename.  Therefore, prepend files with, e.g., a number like 00001, so that they will be imported in the desired order
+* Specify folder containing files via environment variable SCRIPTS_FOLDER
+* Use above generated image as you would the base cockroach image
